@@ -1,0 +1,107 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Interactive Cichlid social networks!</title>
+  <meta name="description" content="network test">
+  <meta name="author" content="Sean Maguire based on tutorial by Jim Vallandingham">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div id="container" class="container">
+    <header>
+    <h1>Cichlid networks</h1>
+    <p>Some info about cichlids here....</p>
+    </header>
+
+      <div id="community_selection" class="control">
+        <h3>Community</h3>
+        <select id="community_select">
+          <option value="groupA_day1.json">Community A day 1</option>
+          <option value="groupA_day2.json">Community A day 2</option>
+          <option value="groupA_day3.json">Community A day 3</option>
+          <option value="groupA_day4.json">Community A day 4</option>
+          <option value="groupA_day5.json">Community A day 5</option>
+          <option value="groupA_day6.json">Community A day 6</option>
+          <option value="groupA_day7.json">Community A day 7</option>
+          <option value="groupB_day1.json">Community B day 1</option>
+          <option value="groupB_day2.json">Community B day 2</option>
+          <option value="groupB_day3.json">Community B day 3</option>
+          <option value="groupB_day4.json">Community B day 4</option>
+          <option value="groupB_day5.json">Community B day 5</option>
+          <option value="groupB_day6.json">Community B day 6</option>
+          <option value="groupB_day7.json">Community B day 7</option>
+          <option value="groupC_day1.json">Community C day 1</option>
+          <option value="groupC_day2.json">Community C day 2</option>
+          <option value="groupC_day3.json">Community C day 3</option>
+          <option value="groupC_day4.json">Community C day 4</option>
+          <option value="groupC_day5.json">Community C day 5</option>
+          <option value="groupC_day6.json">Community C day 6</option>
+          <option value="groupC_day7.json">Community C day 7</option>
+        </select>
+
+      </div>
+    <div id="controls">
+      <div id="layouts" class="control">
+        <h3>Layout</h3>
+        <a id="force" class="active">Force Directed</a>
+        <a id="radial">Sub_groups</a>
+      </div>
+      <div id="filters" class="control">
+        <h3>Filter</h3>
+        <a id="all" class="active">All</a>
+        <a id="highly_connected">High outdegree</a>
+        <a id="weakly_connected">Low outdegree</a>
+      </div>
+    <div id="main" role="main">
+      <div id="vis"></div>
+    </div>
+    <footer>
+    <p>Data from <a href="www.alexjordan.org">Alex Jordan</a>. <br/>Highly connected nodes based on nodes with out-degree higher than the median for all animals in network. Orange nodes are female, blue nodes are male.</p>
+
+    </footer>
+  </div> <!--! end of #container -->
+
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <script src="js/libs/coffee-script.js"></script>
+  <script src="js/libs/d3.v2.js"></script>
+  <script src="js/Tooltip.js"></script>
+  <script type="text/coffeescript" src="coffee/vis.coffee"></script>
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
