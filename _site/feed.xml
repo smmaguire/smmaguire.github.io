@@ -4,10 +4,10 @@
     <title>Sean Martin Maguire</title>
     <description>Welcome to my site
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Nov 2015 11:51:53 -0600</pubDate>
-    <lastBuildDate>Tue, 10 Nov 2015 11:51:53 -0600</lastBuildDate>
+    <link>http://smmaguire.github.io/</link>
+    <atom:link href="http://smmaguire.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 18 Nov 2015 02:06:04 -0600</pubDate>
+    <lastBuildDate>Wed, 18 Nov 2015 02:06:04 -0600</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -15,8 +15,8 @@
         <description>&lt;p&gt;This a D3 visualization I’ve been working on with to allow readers to interact with the data from our upcoming paper, “The Social and Ecological Costs of and ‘Over-Extended’ Phenotype. &lt;a href=&quot;http://smmaguire.github.io/cichlid.html&quot;&gt;Check it out&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Nov 2015 23:40:20 -0600</pubDate>
-        <link>http://yourdomain.com/datavis/2015/11/09/interactive-cn.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/datavis/2015/11/09/interactive-cn.html</guid>
+        <link>http://smmaguire.github.io/datavis/2015/11/09/interactive-cn.html</link>
+        <guid isPermaLink="true">http://smmaguire.github.io/datavis/2015/11/09/interactive-cn.html</guid>
         
         
         <category>DataVis</category>
@@ -30,8 +30,8 @@
 &lt;p&gt;TEST. TEST #2&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Nov 2015 23:09:20 -0600</pubDate>
-        <link>http://yourdomain.com/welcome/2015/11/09/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/welcome/2015/11/09/welcome-to-jekyll.html</guid>
+        <link>http://smmaguire.github.io/welcome/2015/11/09/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://smmaguire.github.io/welcome/2015/11/09/welcome-to-jekyll.html</guid>
         
         
         <category>Welcome</category>
