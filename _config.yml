@@ -7,6 +7,18 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://smmaguire.github.io" # the base hostname & protocol for your site
 twitter_username: sm_maguire
 github_username:  smmaguire
-
+name: Sean Maguire
+email_full: mailto:smmaguire@gmail.com
+website: smmaguire.github.io
+website_full: https://smmaguire.github.io
+github: smmaguire
+twitter: sm_maguire
+tel: 4134332918
+tel_full: tel:4134332918
+google_maps: 'https://www.google.co.uk/maps/place/44+Perth+St,+Edinburgh,+Edinburgh+City+EH3+5BL'
+address: 314 West 34th Street
+postcode: 78705
+city: Austin, TX
+country: USA
 # Build settings
 markdown: kramdown
