@@ -1,7 +1,20 @@
 ---
-layout: pdf
+layout: layout
 title: CV
-permalink: /CV/
+permalink: /CVhtml/
 ---
+{% include Research_statement.html %}
 
-<iframe src="https://drive.google.com/file/d/0B6g33tJ5wolQUWVPQlctbVFkYjA/preview" width="100%" height="100%"></iframe>     
+{% include pubs.html %}
+
+{% include education.html %}
+
+{% include Fellowships.html %}
+
+{% include Grants.html %}
+
+{% include employment.html %}
+
+{% include Teaching.html %}
+
+{% include volunteer.html %}
