@@ -5,7 +5,7 @@ permalink: /Talks/
 ---
 
 
-<h1 class="page-heading">Brain Behavior and Evolution seminar UT-Austin 11.6.15</h1> 
+<h1 class="page-heading">BBBrain Behavior and Evolution seminar UT-Austin 11.6.15</h1> 
 
 <div class="box"> <iframe src="http://wl.figshare.com/articles/1598199/embed?show_title=0" width="568" height="502" frameborder="0"></iframe> </div>
 
