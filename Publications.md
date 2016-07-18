@@ -7,7 +7,7 @@ permalink: /Pubs/
 ## 2016
 ________________________________
 
-### The Social and Ecological Costs of an 'Over-Extended' Phenotype.
+### [The Social and Ecological Costs of an 'Over-Extended' Phenotype.](http://rspb.royalsocietypublishing.org/content/283/1822/20152359)
 *Proceedings of the Royal Society B.* In press. Jordan A.J., **Maguire S.M.**, Hofmann H.A., Kohada M. (2016).
 
 
