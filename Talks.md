@@ -1,8 +1,7 @@
 ---
-layout: pdf
+layout: default
 title: Talks
 permalink: /Talks/
 ---
 
-
-{% include Talks.html %}
+{% include Talks2.html %}
