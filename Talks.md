@@ -4,8 +4,6 @@ title: Talks
 permalink: /Talks/
 ---
 
-{% include Talks2.html %}
+{% include BBE.tiff%}
 
-__________
-
-{% include talks3.html %}
+{% include EVOL.tiff%}
