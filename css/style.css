@@ -110,3 +110,12 @@ line.link {
   stroke-width: 1.5px;
 }
 
+.box{
+    float:left;
+    margin-right:20px;
+}
+.clear{
+    clear:both;
+}
+
+
