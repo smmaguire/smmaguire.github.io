@@ -5,13 +5,15 @@
     <description></description>
     <link>http://smmaguire.github.io/</link>
     <atom:link href="http://smmaguire.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Nov 2015 14:50:37 -0600</pubDate>
-    <lastBuildDate>Wed, 25 Nov 2015 14:50:37 -0600</lastBuildDate>
-    <generator>Jekyll v3.0.0</generator>
+    <pubDate>Mon, 18 Jul 2016 17:42:01 -0500</pubDate>
+    <lastBuildDate>Mon, 18 Jul 2016 17:42:01 -0500</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Interactive Cichlid Networks</title>
-        <description>&lt;p&gt;This a D3 visualization I’ve been working on with to allow readers to interact with the data from our upcoming paper, “The Social and Ecological Costs of and ‘Over-Extended’ Phenotype. &lt;a href=&quot;http://smmaguire.github.io/cichlid.html&quot;&gt;Check it out&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;This a D3 visualization I’ve been working on with to allow readers to interact with the data from our paper, “The Social and Ecological Costs of and ‘Over-Extended’ Phenotype. &lt;a href=&quot;http://smmaguire.github.io/cichlid.html&quot;&gt;Check it out&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Each node reprensents an individual fish from a wild colony of &lt;em&gt;Neolamprologous&lt;/em&gt; with links representing social interactions between individuals. You can use the drop down menu to see how the social networks change over time. We manipulated the colonies on day 4, making one male more attractive. How does the network change after day 4? See for yourself! Also you can see our conclusions in the paper which is linked under the publications tab.&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Nov 2015 23:40:20 -0600</pubDate>
         <link>http://smmaguire.github.io/datavis/2015/11/09/interactive-cn.html</link>
@@ -19,21 +21,6 @@
         
         
         <category>DataVis</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to My Website!</title>
-        <description>&lt;p&gt;Welcome to my site! Work in progress. Obviously&lt;/p&gt;
-
-&lt;p&gt;TEST. TEST #2&lt;/p&gt;
-</description>
-        <pubDate>Mon, 09 Nov 2015 23:09:20 -0600</pubDate>
-        <link>http://smmaguire.github.io/welcome/2015/11/09/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://smmaguire.github.io/welcome/2015/11/09/welcome-to-jekyll.html</guid>
-        
-        
-        <category>Welcome</category>
         
       </item>
     

@@ -147,3 +147,11 @@ footer p {
     margin-bottom: 10px;
     font-size: 10pt;
 }
+
+.box{
+    float:left;
+    margin-right:20px;
+}
+.clear{
+    clear:both;
+}
