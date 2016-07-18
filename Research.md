@@ -3,10 +3,10 @@ layout: page
 title: Research
 permalink: /Research/
 ---
-My research is focused on the neural and molecular mechanisms underlying animal behavior. I have done research on several different species including nematode worms, Atlantic Salmon and Cichlid fish.
+Myyy research is focused on the neural and molecular mechanisms underlying animal behavior. I have done research on several different species including nematode worms, Atlantic Salmon and Cichlid fish.
 
 ### Brain circuits underlying social Dominance in Cichlid fish
-My dissertaion research focuses on social dominance in the african cichlid fish *Astatotilapia burtoni*. In my experiments I allow males to transition from subordinate to dominant and I test how their brain changes in response. I use two different techniques to measure neural activity in the brain, cytochrome oxidase histochemistry and immediate early gene *in situ* hybridization. ![test](/_includes/test.jpg)
+My dissertaion research focuses on social dominance in the african cichlid fish *Astatotilapia burtoni*. In my experiments I allow males to transition from subordinate to dominant and I test how their brain changes in response. I use two different techniques to measure neural activity in the brain, cytochrome oxidase histochemistry and immediate early gene *in situ* hybridization. ![test]({{smmaguire.github.io}}/_includes/test.jpg)
 
 
 ### Smoltification in Atlantic Salmon
