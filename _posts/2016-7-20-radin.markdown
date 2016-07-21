@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Quantifying Radioactive *in situ*"
-date:   2016-7-20 23:40:20 -0600
+date:   2016-7-20
 categories: quantification
 ---
 
