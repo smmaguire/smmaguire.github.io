@@ -5,9 +5,86 @@
     <description></description>
     <link>http://smmaguire.github.io/</link>
     <atom:link href="http://smmaguire.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Jul 2016 17:42:01 -0500</pubDate>
-    <lastBuildDate>Mon, 18 Jul 2016 17:42:01 -0500</lastBuildDate>
+    <pubDate>Wed, 20 Jul 2016 20:23:23 -0500</pubDate>
+    <lastBuildDate>Wed, 20 Jul 2016 20:23:23 -0500</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Quantifying Radioactive *in situ*</title>
+        <description>&lt;p&gt;Currently I’m working on quantifying radioactive &lt;em&gt;in situ&lt;/em&gt; hybridization. This a technique where you create radioactive riboprobes which target a particular gene. You can then detect binding of the probe using silver-halide emulsion. I thought I would post my method in case it is useful for somebody else (or myself in the future.) I’m using &lt;a href=&quot;https://fiji.sc&quot;&gt;FIJI&lt;/a&gt; (ie image J for this). A radioactive &lt;em&gt;in situ&lt;/em&gt; looks like this (for quantification you should use a much more magnified micrograph, probably at least 40x):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assests/darkfield_example.jpg&quot; alt=&quot;df&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To quantify the silver grains I took one photo in brightfield and a corresponding photo in darkfield. The darkfield photo separates the silver grains from the background pretty well. In order to quantify the grains we need to do the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a mask of the cells. We only want to count grains that developed over cells.&lt;/li&gt;
+  &lt;li&gt;Separate overlapping grains. If grains are overlapping they will be counted as a single object. We want to get as close to the true number as possible.&lt;/li&gt;
+  &lt;li&gt;Subtract the cell mask (step 1) from the silver grain image to delete grains that are not over cells.&lt;/li&gt;
+  &lt;li&gt;Count whatever grains are leftover.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For step 1 you will need to download the &lt;a href=&quot;https://sites.google.com/site/qingzongtseng/adaptivethreshold&quot;&gt;adaptive thresholding&lt;/a&gt; algorithm from opencv which has been ported to imageJ (you could also do this step in opencv directly if you’re okay with C++). I find that this works much better than the automatic thresholding options that come with FIJI, especially since in my images there is a lot of variation in how darkly cells were stained in different brains or different brain areas. We will create the cell mask starting from the brightfield image. The steps for creating the mask are as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Invert image (the adaptive thresholding expects a dark background.)&lt;/li&gt;
+  &lt;li&gt;Subtract background (rolling-ball 300px).&lt;/li&gt;
+  &lt;li&gt;Run adaptive thresholding&lt;/li&gt;
+  &lt;li&gt;Subtract very small objects. These are grains that are not over cells. We don’t want these as part of our cell mask.&lt;/li&gt;
+  &lt;li&gt;Dilate the remaining objects. We do want to capture grains that are very close to the cell borders, these are likely relavant grains.&lt;/li&gt;
+  &lt;li&gt;Save thresholded mask for use in step 3.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;My imageJ macro looks like this:
+~~~~~~~~
+function makeCellMask(inputx, outputx, filenamex){
+	open(inputx + filenamex);
+	run(“Invert”);
+	run(“Subtract Background…”, “rolling=300”);
+	run(“adaptiveThr “, “using=[Weighted mean] from=501 then=1”);
+	run(“Analyze Particles…”, “size=200-Infinity pixel show=Masks”);
+	run(“Dilate”);
+	run(“Invert”);
+	saveAs(“tif”, outputx+filenamex);
+	close();
+}&lt;/p&gt;
+
+&lt;p&gt;inputx = “/Users/seanmaguire/Documents/df_methods_comparison/green_input/” ; 
+outputx = “/Users/seanmaguire/Documents/df_methods_comparison/green_output/”;
+setBatchMode(true);
+list2 = getFileList(inputx);
+for (i = 0; i &amp;lt; list2.length; i++)
+        makeCellMask(inputx, outputx, list2[i]);
+setBatchMode(false);
+~~~~~~~~~&lt;/p&gt;
+
+&lt;p&gt;Now we have a new file saved which is the cell mask. The next step is going to be to separate overlapping silver grains in the darkfield image. For this we’re going to use the &lt;a href=&quot;http://www.sussex.ac.uk/gdsc/intranet/microscopy/imagej/findfoci&quot;&gt;findFoci plugin&lt;/a&gt;. We’ll be able to separate overlapping grains because the center of each grain is brighter than the edges. Thus we can ID individual grains and separate them. A schematic of how it works (from the findFoci manual):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assests/find_peaks.tiff&quot; alt=&quot;peaks&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So we can use this to segment and count the overlapping grains. Here is the code I use:
+~~~~~~~~~~~~~~~
+run(“FindFoci”, “mask=(None) background_method=[Auto threshold] background_parameter=2.5 auto_threshold=Otsu statistics_mode=Both search_method=[Above background] search_parameter=0.4 minimum_size=3 minimum_above_saddle minimum_peak_height=[Relative above background] peak_parameter=0.0 sort_method=[Total intensity] maximum_peaks=10000 show_mask=[Peaks above saddle] overlay_mask fraction_parameter=0.001 show_table clear_table mark_maxima show_log_messages gaussian_blur=0.0 centre_method=[Max value (search image)] centre_parameter=2.0”);
+~~~~~~~~~~~~~~~~&lt;/p&gt;
+
+&lt;p&gt;Before segmentation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assests/before_seg.jpg&quot; alt=&quot;before&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And After segmentation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assests/after_seg.jpg&quot; alt=&quot;after&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Okay thats pretty much it! You can use the findFoci batch mode and supply the masks from step 1 to do the mask subtraction.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 20 Jul 2016 00:00:00 -0500</pubDate>
+        <link>http://smmaguire.github.io/quantification/2016/07/20/radin.html</link>
+        <guid isPermaLink="true">http://smmaguire.github.io/quantification/2016/07/20/radin.html</guid>
+        
+        
+        <category>quantification</category>
+        
+      </item>
     
       <item>
         <title>Interactive Cichlid Networks</title>

@@ -26,6 +26,7 @@ For step 1 you will need to download the [adaptive thresholding](https://sites.g
 6. Save thresholded mask for use in step 3.
 
 My imageJ macro looks like this:
+
 ~~~~~~~~
 function makeCellMask(inputx, outputx, filenamex){
 	open(inputx + filenamex);
@@ -53,6 +54,7 @@ Now we have a new file saved which is the cell mask. The next step is going to b
 ![peaks]({{smmaguire.github.io}}/assests/find_peaks.tiff)
 
 So we can use this to segment and count the overlapping grains. Here is the code I use:
+
 ~~~~~~~~~~~~~~~
 run("FindFoci", "mask=(None) background_method=[Auto threshold] background_parameter=2.5 auto_threshold=Otsu statistics_mode=Both search_method=[Above background] search_parameter=0.4 minimum_size=3 minimum_above_saddle minimum_peak_height=[Relative above background] peak_parameter=0.0 sort_method=[Total intensity] maximum_peaks=10000 show_mask=[Peaks above saddle] overlay_mask fraction_parameter=0.001 show_table clear_table mark_maxima show_log_messages gaussian_blur=0.0 centre_method=[Max value (search image)] centre_parameter=2.0");
 ~~~~~~~~~~~~~~~~
